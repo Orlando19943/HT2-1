@@ -6,7 +6,7 @@
  *
  * Implementación de una calculadora
  */
-public class Calculadora{
+public class Calculadora implements iCalculadora{	
 
 	/**
 	* Suma dos números

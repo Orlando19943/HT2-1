@@ -8,7 +8,7 @@
  */
 import java.util.ArrayList;
 
-public class Stack<E>{
+public class Stack<E> implements iStack<E>{
 
 	private ArrayList<E> stack = new ArrayList<E>();
 
