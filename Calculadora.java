@@ -6,8 +6,8 @@
  *
  * Implementación de una calculadora
  */
-public class Calculadora implements iCalculadora{	
-
+public class Calculadora extends Stack<Object> implements iCalculadora  {	
+ 
 	/**
 	* Suma dos números
 	* @post crea un número resultante de la suma de los dos enviados
