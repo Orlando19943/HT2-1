@@ -26,6 +26,7 @@ public class Main {
 	      String resta = "-";
 	      String mul = "*";
 	      String div = "/";
+	      int n = 1;
     	  int num1 = 0;
     	  int num2 = 0;
 	      
@@ -57,12 +58,13 @@ public class Main {
 	            e2.printStackTrace();
 	         }
 	      }
-	      System.out.println(contenido);
+	      System.out.println("Datos que contiene el documento: "+contenido);
 	      
-	      //Ciclo para llenar el stack con los datos del documento
+	      //Ciclo para llenar el stack con los datos del documento y operar
 	      for (int i=0;i<contenido.length();i++) {
 	    	  num1 = 0;
 	    	  num2 = 0;
+	    	  
 	    	  cal.push(contenido.substring(i, i+1));
 	    	  if (cal.peek().equals(suma)) {
 	    		  cal.pop();
@@ -71,19 +73,18 @@ public class Main {
 	    		  num1=Integer.parseInt((String) cal.peek());
 	    		  cal.pop();
 	    		  cal.push(String.valueOf(cal.suma(num1, num2)));
-	    		  System.out.println(cal.peek());
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    		  n++;
 	    	  }
 	    	  if (cal.peek().equals(resta)){
-	    		  //System.out.println(cal.peek() + "ad");
 	    		  cal.pop();
-	    		 // System.out.println(cal.peek() + "asd");
 	    		  num2=Integer.parseInt((String) cal.peek());
 	    		  cal.pop();
-	    		  //System.out.println(cal.peek() + "asd");
 	    		  num1=Integer.parseInt((String) cal.peek());
 	    		  cal.pop();
 	    		  cal.push(String.valueOf(cal.resta(num2, num1)));
-	    		  System.out.println(cal.peek());
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    		  n++;
 	    	  }
 	    	  if (cal.peek().equals(mul)){
 	    		  cal.pop();
@@ -92,7 +93,8 @@ public class Main {
 	    		  num1=Integer.parseInt((String) cal.peek());
 	    		  cal.pop();
 	    		  cal.push(String.valueOf(cal.multiplicacion(num1, num2)));
-	    		  System.out.println(cal.peek());
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    		  n++;
 	    	  }
 	    	  if (cal.peek().equals(div)){
 	    		  cal.pop();
@@ -101,7 +103,8 @@ public class Main {
 	    		  num1=Integer.parseInt((String) cal.peek());
 	    		  cal.pop();
 	    		  cal.push(String.valueOf(cal.division(num2, num1)));
-	    		  System.out.println(cal.peek());
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    		  n++;
 	    	  }
 	      }
 	      
