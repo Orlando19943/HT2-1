@@ -6,7 +6,7 @@
  *
  * Implementación de una calculadora
  */
-public class Calculadora extends Stack<Object> implements iCalculadora  {	
+public class Calculadora implements iCalculadora  {	
  
 	/**
 	* Suma dos números

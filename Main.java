@@ -22,6 +22,7 @@ public class Main {
 	      String linea = null;
 	      String contenido = null;
 	      Calculadora cal = new Calculadora();
+	      iStack<Integer> stack = new Stack<Integer>();
 	      String suma = "+";
 	      String resta = "-";
 	      String mul = "*";
@@ -65,45 +66,45 @@ public class Main {
 	    	  num1 = 0;
 	    	  num2 = 0;
 	    	  
-	    	  cal.push(contenido.substring(i, i+1));
-	    	  if (cal.peek().equals(suma)) {
-	    		  cal.pop();
-	    		  num2=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  num1=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  cal.push(String.valueOf(cal.suma(num1, num2)));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    	  stack.push(Integer.parseInt(contenido.substring(i, i+1)));
+	    	  if (stack.peek().equals(suma)) {
+	    		  stack.pop();
+	    		  num2= stack.peek();
+	    		  stack.pop();
+	    		  num1=stack.peek();
+	    		  stack.pop();
+	    		  stack.push(cal.suma(num1, num2));
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
 	    		  n++;
 	    	  }
-	    	  if (cal.peek().equals(resta)){
-	    		  cal.pop();
-	    		  num2=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  num1=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  cal.push(String.valueOf(cal.resta(num2, num1)));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    	  if (stack.peek().equals(resta)){
+	    		  stack.pop();
+	    		  num2=stack.peek();
+	    		  stack.pop();
+	    		  num1=stack.peek();
+	    		  stack.pop();
+	    		  stack.push(cal.resta(num1, num2));
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
 	    		  n++;
 	    	  }
-	    	  if (cal.peek().equals(mul)){
-	    		  cal.pop();
-	    		  num2=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  num1=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  cal.push(String.valueOf(cal.multiplicacion(num1, num2)));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    	  if (stack.peek().equals(mul)){
+	    		  stack.pop();
+	    		  num2=stack.peek();
+	    		  stack.pop();
+	    		  num1=stack.peek();
+	    		  stack.pop();
+	    		  stack.push(cal.multiplicacion(num1, num2));
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
 	    		  n++;
 	    	  }
-	    	  if (cal.peek().equals(div)){
-	    		  cal.pop();
-	    		  num2=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  num1=Integer.parseInt((String) cal.peek());
-	    		  cal.pop();
-	    		  cal.push(String.valueOf(cal.division(num2, num1)));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+cal.peek());
+	    	  if (stack.peek().equals(div)){
+	    		  stack.pop();
+	    		  num2=stack.peek();
+	    		  stack.pop();
+	    		  num1=stack.peek();
+	    		  stack.pop();
+	    		  stack.push(cal.division(num1, num2));
+	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
 	    		  n++;
 	    	  }
 	      }
