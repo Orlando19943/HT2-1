@@ -6,11 +6,11 @@
  *
  * Contrato de un stack
  */
-import java.util.ArrayList;
+import java.util.Vector;
 
 public class Stack<E> implements iStack<E>{
 
-	private ArrayList<E> stack = new ArrayList<E>();
+	private Vector<E> stack = new Vector<E>();
 
 	/**
 	* Agrega un dato al stack sin importar cuantos datos hay
