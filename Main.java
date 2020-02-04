@@ -63,51 +63,51 @@ public class Main {
 	      
 	      //Ciclo para llenar el stack con los datos del documento y operar
 	      for (int i=0;i<contenido.length();i++) {
-	    	  num1 = 0;
-	    	  num2 = 0;
 	    	  
-	    	  stack.push(Integer.parseInt(contenido.substring(i, i+1)));
-	    	  if (stack.peek().equals(suma)) {
-	    		  stack.pop();
-	    		  num2= stack.peek();
-	    		  stack.pop();
-	    		  num1=stack.peek();
-	    		  stack.pop();
-	    		  stack.push(cal.suma(num1, num2));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
-	    		  n++;
+	    	  if (contenido.substring(i, i+1).equals(suma)||contenido.substring(i, i+1).equals(resta)||contenido.substring(i, i+1).equals(mul)||contenido.substring(i, i+1).equals(div)) {
+	    		  if (contenido.substring(i, i+1).equals(suma)) {
+		    		  num2= stack.peek();
+		    		  stack.pop();
+		    		  num1=stack.peek();
+		    		  stack.pop();
+		    		  stack.push(cal.suma(num1, num2));
+		    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
+		    		  n++;
+		    	  }
+		    	  if (contenido.substring(i, i+1).equals(resta)){
+		    		  num2=stack.peek();
+		    		  stack.pop();
+		    		  num1=stack.peek();
+		    		  stack.pop();
+		    		  stack.push(cal.resta(num1, num2));
+		    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
+		    		  n++;
+		    	  }
+		    	  if (contenido.substring(i, i+1).equals(mul)){
+		    		  num2=stack.peek();
+		    		  stack.pop();
+		    		  num1=stack.peek();
+		    		  stack.pop();
+		    		  stack.push(cal.multiplicacion(num1, num2));
+		    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
+		    		  n++;
+		    	  }
+		    	  if (contenido.substring(i, i+1).equals(div)){		    		  
+		    		  num2=stack.peek();
+		    		  stack.pop();
+		    		  num1=stack.peek();
+		    		  stack.pop();
+		    		  stack.push(cal.division(num2, num1));
+		    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
+		    		  n++;
+		    	  }  
 	    	  }
-	    	  if (stack.peek().equals(resta)){
-	    		  stack.pop();
-	    		  num2=stack.peek();
-	    		  stack.pop();
-	    		  num1=stack.peek();
-	    		  stack.pop();
-	    		  stack.push(cal.resta(num1, num2));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
-	    		  n++;
+	    	  else {
+	    		  stack.push(Integer.parseInt(contenido.substring(i, i+1)));
+	    	      
 	    	  }
-	    	  if (stack.peek().equals(mul)){
-	    		  stack.pop();
-	    		  num2=stack.peek();
-	    		  stack.pop();
-	    		  num1=stack.peek();
-	    		  stack.pop();
-	    		  stack.push(cal.multiplicacion(num1, num2));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
-	    		  n++;
-	    	  }
-	    	  if (stack.peek().equals(div)){
-	    		  stack.pop();
-	    		  num2=stack.peek();
-	    		  stack.pop();
-	    		  num1=stack.peek();
-	    		  stack.pop();
-	    		  stack.push(cal.division(num1, num2));
-	    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
-	    		  n++;
-	    	  }
-	      }
+	    	  
+	    }
 	      
 	      
 
