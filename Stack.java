@@ -41,7 +41,7 @@ public class Stack<E> implements iStack<E>{
 
 	/**
 	* Verifica si el stack esta vacio o esta lleno
-	* @return true o flase
+	* @return true o false
 	*/
 	public boolean empty(){
 		return stack.isEmpty();
