@@ -98,7 +98,7 @@ public class Main {
 			    		  stack.pop();
 			    		  num1=stack.peek();
 			    		  stack.pop();
-			    		  stack.push(cal.division(num2, num1));
+			    		  stack.push(cal.division(num1, num2));
 			    		  System.out.println("Resultado de la "+ n + " operacion= "+stack.peek());
 			    		  n++;
 			    	  }  
