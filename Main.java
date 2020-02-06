@@ -31,6 +31,7 @@ public class Main {
     	  int num1 = 0;
     	  int num2 = 0;
 	      
+    	  //Codigo para leer archivos de texto sacado de: http://chuwiki.chuidiang.org/index.php?title=Lectura_y_Escritura_de_Ficheros_en_Java
 	      try {
 	         // Apertura del fichero y creacion de BufferedReader para poder
 	         // hacer una lectura comoda (disponer del metodo readLine()).
